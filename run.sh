@@ -1,0 +1,1 @@
+mvn package -DskipTests && java -jar target/task-1.jar && wait
