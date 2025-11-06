@@ -1,6 +1,9 @@
 ### Build and run
 Для сборки и запуска нужен maven и java.
-Использовать run.cmd для сборки и запуска на windows.
+
+Windows: запустить run.cmd.
+
+Linux: запустить run.sh.
 
 ### Usage
 Сервер доступен по адресу: **localhost:8080**
