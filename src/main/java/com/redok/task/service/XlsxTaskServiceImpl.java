@@ -29,7 +29,6 @@ public class XlsxTaskServiceImpl implements XlsxTaskService {
         } catch (IOException e) {
             return "Error while reading the file, check your path or data";
         }
-        //Тут стоило применить паттерн стратегию для выбора алгоритма сортировки, но делал быстро.
         return String.valueOf(sortStrategy.findNthSmallest(numbers, n));
     }
 }
