@@ -1,18 +1,22 @@
 package com.redok.task.utils;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Random;
 
 import static java.util.Collections.swap;
 
-public class QuickSelect {
+@Component
+public class QuickSelect implements SortStrategy {
 
-    public static double findNthSmallest(List<Double> nums, int n) {
+    @Override
+    public double findNthSmallest(List<Double> nums, int n) {
         int size = nums.size();
         return quickselect(0, size - 1, n - 1, nums);
     }
 
-    private static double quickselect(int left, int right, int targetIndex, List<Double> nums) {
+    private double quickselect(int left, int right, int targetIndex, List<Double> nums) {
         if (left == right) {
             return nums.get(left);
         }
@@ -27,7 +31,7 @@ public class QuickSelect {
 
     }
 
-    private static int partition(int left, int right, List<Double> nums) {
+    private int partition(int left, int right, List<Double> nums) {
         Random randomPivot = new Random();
         int pivotIndex = left + randomPivot.nextInt(right - left);
         double pivotValue = nums.get(pivotIndex);
